@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular App</title>
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!--  -->
+
+    <div class="main" ng-app="myList" ng-controller="myListController">
+        <h1>Item's List</h1>
+        <div class="additem">
+            <label for="text">Item's Name: </label>
+            <input ng-model="newItem" type="text" class="addtext" placeholder="Add Item" id="text">
+            <button ng-click="pushItem()" type="button">ِADD</button>
+        </div>
+        <ul>
+            <li ng-repeat="i in items">
+                {{i}}
+                <span ng-click="deleteItem(index)">x</span>
+            </li>
+        </ul>
+    </div>
+<!--  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
